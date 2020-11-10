@@ -10,6 +10,24 @@ npm run dev
 yarn dev
 ```
 
+1. React
+2. GraphQL / MongoDB
+3. Express / NextJS Internal API
+4. Styled Components (Maybe !)
+5. Storybook
+6. Plop File
+7. Subscriptions for cool live stuff !
+8. Deploy through NextJS thing (plus they give you free analytics)
+9. Apollo Client
+10. Typescript
+11. Jest/react testing library
+
+Typescript
+https://nextjs.org/docs/basic-features/typescript
+
+
+
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
