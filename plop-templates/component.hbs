@@ -1,0 +1,25 @@
+{{#if withState}}
+import { useState } from 'react';
+{{/if}}
+import PropTypes from 'prop-types';
+{{#if withCSS}}
+import css from './{{ pascalCase name }}.module.css';
+{{/if}}
+
+{{#if withState}}
+const {{ pascalCase name }} = () => {
+  const [state, setState] = useState(false);
+
+  return (
+    <div />
+  );
+};
+{{else}}
+const {{ pascalCase name }} = () => (
+  <div />
+);
+{{/if}}
+
+{{ pascalCase name }}.propTypes = {};
+
+export default {{ pascalCase name }};
