@@ -1,25 +1,19 @@
-{{#if withState}}
-import { useState } from 'react';
-{{/if}}
-import PropTypes from 'prop-types';
-{{#if withCSS}}
-import css from './{{ pascalCase name }}.module.css';
-{{/if}}
+import * as React from 'react';
 
-{{#if withState}}
 const {{ pascalCase name }} = () => {
-  const [state, setState] = useState(false);
+{{#if withState}}
+  const [state, setState] = React.useState(false);
+{{/if}}
 
+{{#if withUseEffect}}
+  React.useEffect(() => {
+
+  }, [])
+{{/if}}
   return (
     <div />
   );
 };
-{{else}}
-const {{ pascalCase name }} = () => (
-  <div />
-);
-{{/if}}
 
-{{ pascalCase name }}.propTypes = {};
 
 export default {{ pascalCase name }};

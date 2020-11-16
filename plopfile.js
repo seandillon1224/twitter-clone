@@ -21,6 +21,12 @@ module.exports = (plop) => {
         },
         {
           type: 'confirm',
+          name: 'withUseEffect',
+          message: 'Add useEffect?',
+          default: false,
+        },
+        {
+          type: 'confirm',
           name: 'withStory',
           message: 'Add Storybook stories?',
           default: false,
@@ -30,17 +36,17 @@ module.exports = (plop) => {
         const actions = [
           {
             type: 'add',
-            path: 'src/components/{{pascalCase name}}/index.js',
+            path: 'src/components/{{pascalCase name}}/index.tsx',
             templateFile: 'plop-templates/component-index.hbs',
           },
           {
             type: 'add',
-            path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.js',
+            path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.tsx',
             templateFile: 'plop-templates/component.hbs',
           },
           {
             type: 'add',
-            path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.test.js',
+            path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.test.tsx',
             templateFile: 'plop-templates/component-test.hbs',
           },
         ];
@@ -48,7 +54,7 @@ module.exports = (plop) => {
         if (data.withCSS) {
           actions.push({
             type: 'add',
-            path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.module.css',
+            path: 'src/components/{{pascalCase name}}/{{pascalCase name}}Styles.ts',
             templateFile: 'plop-templates/component-css.hbs',
           });
         }
@@ -56,7 +62,7 @@ module.exports = (plop) => {
         if (data.withStory) {
           actions.push({
             type: 'add',
-            path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.stories.js',
+            path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
             templateFile: 'plop-templates/component-stories.hbs',
           });
         }

@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import {{properCase name}} from '.';
+import Test from '.';
 
-describe('{{properCase name}}', () => {
+describe('Test', () => {
   test('renders without error', () => {
-    render(<{{properCase name}} />);
+    render(<Test />);
   });
 });

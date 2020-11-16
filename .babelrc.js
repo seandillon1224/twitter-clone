@@ -3,10 +3,10 @@ module.exports = {
       "next/babel"
     ],
     "plugins": [
-      "inline-react-svg",
       ["module-resolver", {
         "root": ["./src"]
-      }]
+      }],
+      ['styled-components', {'ssr': true}]
     ],
   }
   
