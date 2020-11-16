@@ -4,7 +4,6 @@ const { ObjectId } = mongoose.Schema.Types;
 const ThreadSchema = new Schema({
     text: { type: String, required: true },
     owner: { type: ObjectId },
-
 })
 
 

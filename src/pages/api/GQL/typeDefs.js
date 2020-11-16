@@ -1,23 +1,22 @@
-import { gql } from 'apollo-server-micro'
+import { gql } from "apollo-server-micro";
 
 const typeDefs = gql`
-type Thread {
+  type Thread {
     _id: ID!
     text: String!
-}
+  }
 
-input Thread {
-    
+  input ThreadInput {
     text: String!
-}
+  }
 
-type Mutation {
+  type Mutation {
     addThread(input: ThreadInput): Thread
-}
+  }
 
-type Query{
+  type Query {
     allThreads: [Thread]
-}
-`
+  }
+`;
 
-export default typeDefs
+export default typeDefs;

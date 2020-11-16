@@ -6,26 +6,41 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "plop": "plop",
-    "storybook": "start-storybook -s ./public -p 6006"
+    "storybook": "start-storybook -p 6006 --no-dll",
+    "build-storybook": "build-storybook --no-dll"
   },
   "dependencies": {
-    "@storybook/addon-knobs": "^6.1.0-beta.6",
+    "@types/styled-components": "^5.1.4",
+    "apollo-server-micro": "^2.19.0",
+    "mongoose": "^5.10.14",
     "next": "10.0.1",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^6.1.0-beta.6",
-    "@storybook/addon-docs": "^6.1.0-beta.6",
-    "@storybook/addon-links": "^6.1.0-beta.6",
-    "@storybook/addon-viewport": "^6.1.0-beta.6",
-    "@storybook/addons": "^6.1.0-beta.6",
-    "@storybook/react": "^6.1.0-beta.6",
+    "@babel/core": "^7.12.3",
+    "@storybook/addon-actions": "^6.0.28",
+    "@storybook/addon-essentials": "^6.0.28",
+    "@storybook/addon-links": "^6.0.28",
+    "@storybook/react": "^6.0.28",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.1.2",
+    "@types/jest": "^26.0.15",
     "@types/node": "^14.14.7",
     "@types/react": "^16.9.56",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.1",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-styled-components": "^1.11.1",
+    "jest": "^26.6.3",
     "plop": "^2.7.4",
-    "storybook": "^6.1.0-beta.6",
+    "react-docgen-typescript": "^1.20.5",
+    "react-is": "^17.0.1",
+    "ts-jest": "^26.4.4",
     "typescript": "^4.0.5"
   }
 }
