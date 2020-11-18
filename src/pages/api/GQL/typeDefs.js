@@ -6,7 +6,22 @@ const typeDefs = gql`
     text: String!
   }
 
-  input ThreadInput {
+# type Like {
+#     _id: ID!
+#     threadId: ID!
+# }
+
+
+
+type User {
+    _id: ID!
+    name: String!
+    handle: String!
+    
+}
+
+input ThreadInput {
+    
     text: String!
   }
 
