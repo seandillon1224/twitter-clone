@@ -1,6 +1,8 @@
 // Import Individual Resolver Files Here
-const { ThreadQueries } = require("./ThreadQueries");
+const { PostQueries } = require("./PostQueries");
+ const {UserQueries} = require('./UserQueries')
 // Export them here, spread them in since they are objs
 module.exports = {
-    ...ThreadQueries,
+    ...PostQueries,
+    ...UserQueries
 };
