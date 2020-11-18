@@ -1,5 +1,6 @@
 // Import Models Here
 
 module.exports = {
-    Thread: require("./thread"),
+    Post: require("./post"),
+    User: require('./user')
 };

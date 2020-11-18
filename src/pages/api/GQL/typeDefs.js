@@ -2,15 +2,18 @@ import { gql } from "apollo-server-micro";
 
 const typeDefs = gql`
 
+scalar Date
+
   type User {
-    id: ID!
-    joinedDate: Date!
+    _id: ID!
+    # use created_at?
+    # joinedDate: Date!
     name: String!
     avatar: String!
     email: String!
     handle: String!
     settings: Settings!
-    posts: [Posts]!
+    posts: [Post]!
     comments: [Comments]!
   }
 
@@ -19,16 +22,16 @@ const typeDefs = gql`
     user: ID!
     ads: Boolean!
     activated: Boolean!
-    dateUpdated: Date
+    # dateUpdated: Date
   }
 
-  type Posts {
+  type Post {
     _id: ID!
     own: Boolean!
     user: ID!
     text: String!
     comments: [Comments]!
-    date: Date!
+    # date: Date!
   }
 
   type Comments {
@@ -37,20 +40,31 @@ const typeDefs = gql`
     user: ID!
     text: String!
     comments: [Comments]!
-    date: Date!
+    # date: Date!
   }
 
   input PostInput {
-    id: ID!
     text: String!
+    user: ID!
+
+  }
+
+  input CreateUserInput {
+    name: String!
+    avatar: String
+    email: String!
+    handle: String!
+    
   }
 
   type Mutation {
-    addPost(input: PostInput): Post
+    addPost(input: PostInput!): Post
+    addNewUser(input: CreateUserInput) : User
   }
 
   type Query {
     allPosts: [Post]
+    allUsers: [User]!
   }
 `;
 
