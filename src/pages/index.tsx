@@ -3,6 +3,7 @@ import Head from "next/head";
 import Test from 'components/Test';
 
 import styled from 'styled-components'
+import LoginForm from 'components/LoginForm';
 
 
 const StyledHome = styled.main`
@@ -14,6 +15,7 @@ const StyledHome = styled.main`
      grid-area : 'why-loom';
      border: solid 1px black;
      height: 100%;
+     background: rebeccapurple;
    }
 
    .looming-login {
@@ -25,13 +27,14 @@ const StyledHome = styled.main`
 
 `
 
+
+
 export default function Home() {
   return (
     <>
       <Head>
         <title> Loom</title>
         <link rel="icon" href="/favicon.ico" />
-        <Test/>
       </Head>
        
       <StyledHome>
@@ -46,7 +49,7 @@ export default function Home() {
        </div>
 
        <div className="looming-login">
-         
+          <LoginForm/>
        </div>
        
         
