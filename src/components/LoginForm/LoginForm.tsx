@@ -1,37 +1,34 @@
-import * as React from 'react';
+import * as React from "react";
 
 const LoginForm = () => {
   const [state, setState] = React.useState({
-    username : '',
-    passsword: ''
+    username: "",
+    password: "",
   });
 
-  React.useEffect(() => {
+  const { username, password } = state;
 
-  }, [])
-
-
-const {username, passsword} = state
-
-const handleChange = (e) => {
-  const {target ,value} = e;
-  console.log(target, value)
- setState({
-   ...state,
-   [target] : value
- })
-}
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>, key: any): void => {
+    const {target: {value}} = e;
+    setState({
+      ...state,
+      [key]: value,
+    });
+  };
 
   return (
     <>
-  <input 
-  name='username' value={username} onChange={handleChange} type='text'/>
-  <input type='text'/>
-  <span>  {username}  </span>
-  <span></span>
-  </>
+      <input
+        name="username"
+        value={username}
+        onChange={(e) => handleChange(e, 'username')}
+        type="text"
+      />
+      <input name="password" type="password" value={password} onChange={(e) => handleChange(e, 'password')} />
+      <span> {username} </span>
+      <span></span>
+    </>
   );
 };
-
 
 export default LoginForm;
