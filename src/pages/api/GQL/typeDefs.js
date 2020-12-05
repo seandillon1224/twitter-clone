@@ -28,7 +28,7 @@ scalar Date
   type Post {
     _id: ID!
     own: Boolean!
-    user: ID!
+    user: User!
     text: String!
     comments: [Comments]!
     # date: Date!
@@ -65,6 +65,7 @@ scalar Date
   type Query {
     allPosts: [Post]
     allUsers: [User]!
+    findUser: User
   }
 `;
 

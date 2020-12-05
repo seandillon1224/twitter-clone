@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { theme } from "styles/theme";
+import type {AppProps} from 'next/app'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -10,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-function App({ Component, pageProps }) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <GlobalStyle />
