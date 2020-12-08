@@ -1,71 +1,76 @@
 import { gql } from "apollo-server-micro";
 
 const typeDefs = gql`
-
-scalar Date
+  scalar Date
 
   type User {
     _id: ID!
-    # use created_at?
-    # joinedDate: Date!
     name: String!
     avatar: String!
     email: String!
     handle: String!
     settings: Settings!
     posts: [Post]!
-    comments: [Comments]!
+    comments: [Comment]!
+    createdAt: Date!
   }
 
   type Settings {
     _id: ID!
     user: ID!
     ads: Boolean!
-    activated: Boolean!
-    # dateUpdated: Date
+    active: Boolean!
+    dateUpdated: Date
   }
 
   type Post {
     _id: ID!
-    own: Boolean!
-    user: User!
     text: String!
-    comments: [Comments]!
-    # date: Date!
+    user: User!
+    comments: [Comment]!
+    active: Boolean!
+    createdAt: Date!
   }
 
-  type Comments {
+  type Comment {
     _id: ID!
-    post: ID!
-    user: ID!
+    post: Post!
+    user: User!
     text: String!
-    comments: [Comments]!
-    # date: Date!
+    comments: [Comment]!
+    createdAt: Date!
+  }
+
+  input CommentInput {
+    post: String!
+    user: String!
+    text: String!
   }
 
   input PostInput {
     text: String!
     user: ID!
-
   }
 
-  input CreateUserInput {
+  input UserInput {
     name: String!
     avatar: String
     email: String!
     handle: String!
-    
   }
 
   type Mutation {
     addPost(input: PostInput!): Post
-    addNewUser(input: CreateUserInput) : User
+    addNewUser(input: UserInput!): User
+    addComment(input: CommentInput!): Comment
   }
 
   type Query {
-    allPosts: [Post]
+    allPosts: [Post]!
     allUsers: [User]!
-    findUser: User
+    allComments: [Comment]!
+    findUserById(_id: ID!): User
+    findUsers(queryString: String!): [User]!
   }
 `;
 

@@ -6,17 +6,17 @@ const { ObjectId } = mongoose.Schema.Types;
 
 export interface IPost extends Document {
   text: string;
-  own: boolean;
   user: IUser["_id"];
   comments?: [IComment["_id"]];
-  date: Date;
+  active: boolean;
+  createdAt: Date;
 }
 
 const PostSchema: Schema = new Schema({
   text: { type: String, required: true },
-  own: { type: Boolean, default: true },
   user: { type: ObjectId, ref: "User" },
   comments: [{ type: ObjectId, ref: "Comment" }],
+  active: {type: Boolean, default: true},
   date: { type: Date },
 });
 

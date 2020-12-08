@@ -3,7 +3,7 @@ import connectDB from "lib/mongoose";
 import Query from "lib/GQL/resolvers/Queries";
 import Mutation from "lib/GQL/resolvers/Mutations";
 import { Date } from "lib/GQL/resolvers/Scalars";
-import typeDefs from "pages/api/GQL/typeDefs";
+import typeDefs from "lib/typeDefs";
 import db from "lib/models";
 
 const resolvers = {
@@ -15,7 +15,6 @@ const resolvers = {
 const apolloServer = new ApolloServer({
   typeDefs,
   resolvers,
-
   context: (req) => ({ ...req, ...db }),
 });
 

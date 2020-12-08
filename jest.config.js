@@ -2,7 +2,6 @@ module.exports = {
   // The root of your source code, typically /src
   // `<rootDir>` is a token Jest substitutes
   roots: ["<rootDir>/src"],
-  preset: 'ts-jest',
   moduleDirectories: [
     'node_modules',
     './src/utils', // add the directory with the test-utils.js file
