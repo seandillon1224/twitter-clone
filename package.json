@@ -2,6 +2,11 @@
   "name": "twitter-clone",
   "version": "0.1.0",
   "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -42,7 +47,9 @@
     "babel-loader": "^8.2.1",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-styled-components": "^1.11.1",
+    "husky": "^4.3.0",
     "jest": "^26.6.3",
+    "jest-styled-components": "^7.0.3",
     "plop": "^2.7.4",
     "react-docgen-typescript": "^1.20.5",
     "react-is": "^17.0.1",

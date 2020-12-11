@@ -9,7 +9,7 @@ export interface IComment extends Document {
   post: IPost["_id"];
   user: IUser["_id"];
   comments?: [IComment["_id"]];
-  date: Date;
+  createdAt: Date;
 }
 
 const CommentSchema: Schema = new Schema({
@@ -17,7 +17,7 @@ const CommentSchema: Schema = new Schema({
   post: { type: ObjectId, ref: "Post" },
   user: { type: ObjectId, ref: "User" },
   comments: [{ type: ObjectId, ref: "Comment" }],
-  date: { type: Date },
+  createdAt: { type: Date },
 });
 
 const Comment : Model<IComment> = mongoose.models.Comment || model("Comment", CommentSchema);

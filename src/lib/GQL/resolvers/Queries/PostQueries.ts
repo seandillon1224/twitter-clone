@@ -4,7 +4,9 @@ import { IPost } from "lib/models/post";
 const PostQueries: ResolverMap = {
   async allPosts(_, __, { Post }) {
     try {
-      const posts: IPost[] | null = await Post.find().populate('user');
+      const posts: IPost[] | null = await Post.find()
+        .populate("user")
+        .populate("comments");
       return posts || [];
     } catch (err) {
       throw new Error("An error occurred fetching posts");

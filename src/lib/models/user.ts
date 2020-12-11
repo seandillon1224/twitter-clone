@@ -12,6 +12,7 @@ export interface IUser extends Document {
   settings: string;
   posts?: [IPost["_id"]];
   comments?: [IComment["_id"]];
+  createdAt: Date;
 }
 
 const UserSchema: Schema = new Schema(
@@ -27,7 +28,6 @@ const UserSchema: Schema = new Schema(
   { timestamps: true }
 );
 
-const User: Model<IUser> = mongoose.models.User || model('User', UserSchema)
+const User: Model<IUser> = mongoose.models.User || model("User", UserSchema);
 
 export default User;
-
