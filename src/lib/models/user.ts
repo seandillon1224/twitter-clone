@@ -18,8 +18,8 @@ const UserSchema: Schema = new Schema(
   {
     name: { type: String },
     avatar: { type: String },
-    email: { type: String },
-    handle: { type: String },
+    email: { type: String, unique: true },
+    handle: { type: String, unique: true },
     settings: { type: ObjectId, ref: "Settings" },
     posts: [{ type: ObjectId, ref: "Post" }],
     comments: [{ type: ObjectId, ref: "Comment" }],
