@@ -1,4 +1,5 @@
 import * as React from "react";
+import Button from "components/Button";
 
 const LoginForm = () => {
   const [state, setState] = React.useState({
@@ -24,6 +25,7 @@ const LoginForm = () => {
         onChange={(e) => handleChange(e, 'username')}
         type="text"
       />
+      <Button invert/>
       <input name="password" type="password" value={password} onChange={(e) => handleChange(e, 'password')} />
       <span> {username} </span>
       <span></span>

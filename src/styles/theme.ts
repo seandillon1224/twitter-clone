@@ -8,6 +8,7 @@ const theme: DefaultTheme = {
     condensed: 'Roboto Condensed, Arial, sans-serif',
   },
   colors: {
+    white: "#FFFFFF",
     blue: "#1DA1F2",
     black: "#14171A",
     darkGray: "#657786",
