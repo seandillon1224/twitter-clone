@@ -59,9 +59,20 @@ const typeDefs = gql`
     handle: String!
   }
 
+  input UserEditInput { 
+    name: String
+    avatar: String
+    email: String
+    handle: String
+  }
+
   type Mutation {
     addPost(input: PostInput!): Post
+    editPost(input: PostInput! postId: ID!): Post
+    deletePost(postId: ID! userId: ID!): Post
     addNewUser(input: UserInput!): User
+    editUser(input: UserEditInput userId: ID!): User
+    deleteUser(userId: ID!): User
     addComment(input: CommentInput!): Comment
   }
 

@@ -17,8 +17,8 @@ const PostSchema: Schema = new Schema({
   user: { type: ObjectId, ref: "User" },
   comments: [{ type: ObjectId, ref: "Comment" }],
   active: {type: Boolean, default: true},
-  date: { type: Date },
-});
+
+}, {timestamps: true});
 
 const Post: Model<IPost> = mongoose.models.Post || model("Post", PostSchema);
 
