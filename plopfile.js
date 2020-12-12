@@ -9,6 +9,18 @@ module.exports = (plop) => {
       },
       {
         type: "confirm",
+        name: "withState",
+        message: "Add useState?",
+        default: false,
+      },
+      {
+        type: "confirm",
+        name: "withUseEffect",
+        message: "Add useEffect?",
+        default: false,
+      },
+      {
+        type: "confirm",
         name: "withCSS",
         message: "Styled Component?",
         default: false,
@@ -22,19 +34,7 @@ module.exports = (plop) => {
       {
         type: "confirm",
         name: "withTestTheme",
-        message: "Wrap Test Case in Theme?",
-        default: false,
-      },
-      {
-        type: "confirm",
-        name: "withState",
-        message: "Add useState?",
-        default: false,
-      },
-      {
-        type: "confirm",
-        name: "withUseEffect",
-        message: "Add useEffect?",
+        message: "Wrap Test Case in Styled Component Theme?",
         default: false,
       },
       {

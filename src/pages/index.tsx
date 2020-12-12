@@ -1,7 +1,7 @@
 import * as React from "react";
 import Head from "next/head";
 import styled from "styled-components";
-import LoginForm from "components/LoginForm";
+import LoginForm from "components/HomePage/LoginForm";
 
 const StyledHome = styled.main`
   display: grid;
